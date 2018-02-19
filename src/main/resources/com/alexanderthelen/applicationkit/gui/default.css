@@ -1,0 +1,22 @@
+.view {
+    -fx-background-color: white;
+}
+
+.tree-view {
+    -fx-focus-color: -fx-control-inner-background;
+    -fx-faint-focus-color: -fx-control-inner-background;
+}
+
+.navigationBar {
+    -fx-background-color: lightgrey;
+}
+
+.tree-cell {
+    -fx-border-color: transparent;
+    -fx-border-insets: 3px;
+    -fx-border-width: 0px 0px 0px 5px;
+}
+
+.tree-cell:selected {
+    -fx-border-color: black;
+}
