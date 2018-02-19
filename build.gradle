@@ -21,7 +21,7 @@ publishing {
 }
 
 group "com.alexanderthelen.applicationkit"
-version "1.0.0"
+version "1.1.0"
 description = "Application Kit"
 sourceCompatibility = 1.8
 mainClassName = "com.alexanderthelen.applikationkit.Application"
