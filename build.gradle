@@ -1,27 +1,29 @@
-apply plugin: "java"
-apply plugin: "application"
-apply plugin: "maven-publish"
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'maven-publish'
 
 repositories {
     mavenLocal()
     mavenCentral()
+    jcenter()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    compile "org.xerial:sqlite-jdbc:3.16.1+"
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.2"
+    compile 'org.codehaus.groovy:groovy:2.4.13'
+    compile 'com.github.Phlegethon90:GUIKit:develop-SNAPSHOT'
+    testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
 }
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        maven(MavenPublication) {
             from components.java
         }
     }
 }
 
-group "com.alexanderthelen.applicationkit"
-version "1.1.0"
-description = "Application Kit"
+group 'com.alexanderthelen.applicationkit'
+version '2.0.0'
+description = 'Application Kit'
 sourceCompatibility = 1.8
-mainClassName = "com.alexanderthelen.applikationkit.Application"
