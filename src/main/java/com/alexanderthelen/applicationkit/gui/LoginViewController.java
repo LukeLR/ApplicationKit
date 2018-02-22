@@ -67,13 +67,13 @@ public abstract class LoginViewController extends FormViewController {
 		try {
 			loginUser(getInputData());
 			presentAlertDialog(Alert.AlertType.INFORMATION, "Anmeldung erfolgreich!",
-					"Die Anmeldung des Nutzers konnte ausgef�hrt werden.", null, ButtonType.OK);
+					"Die Anmeldung des Nutzers konnte ausgeführt werden.", null, ButtonType.OK);
 			if (getParentController() instanceof AuthenticationViewController) {
 				((AuthenticationViewController) getParentController()).onUserLogin();
 			}
 		} catch (Exception e) {
 			presentAlertDialog(Alert.AlertType.ERROR, "Anmeldung fehlgeschlagen!",
-					"Die Anmeldung des Nutzers konnte nicht ausgef�hrt werden.", e, ButtonType.OK);
+					"Die Anmeldung des Nutzers konnte nicht ausgeführt werden.", e, ButtonType.OK);
 			getInputNodes().get(0).requestFocus();
 		}
 	}

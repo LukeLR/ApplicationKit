@@ -32,7 +32,7 @@ public class Data extends LinkedHashMap<String, Object> {
 	 */
 	public Object get(String key) throws SQLException {
 		if (!containsKey(key))
-			throw new SQLException("Schl�ssel \"" + key + "\" nicht vorhanden.");
+			throw new SQLException("Schlüssel \"" + key + "\" nicht vorhanden.");
 		return super.get(key);
 	}
 }

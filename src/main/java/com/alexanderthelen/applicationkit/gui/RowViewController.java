@@ -189,7 +189,7 @@ public class RowViewController extends FormViewController {
         try {
             newRow = getNewRow();
         } catch (Exception e) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Eingaben ung�ltig!", "Die Eingaben sind ung�ltig.", e,
+            presentAlertDialog(Alert.AlertType.ERROR, "Eingaben ungültig!", "Die Eingaben sind ungültig.", e,
                     ButtonType.OK);
             return;
         }
@@ -197,8 +197,8 @@ public class RowViewController extends FormViewController {
             try {
                 tableViewController.addRow(newRow);
             } catch (Exception e) {
-                presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht hinzugef�gt!",
-                        "Die Zeile konnte nicht hinzugef�gt werden.", e, ButtonType.OK);
+                presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht hinzugefügt!",
+                        "Die Zeile konnte nicht hinzugefügt werden.", e, ButtonType.OK);
                 return;
             }
         } else {
@@ -263,11 +263,11 @@ public class RowViewController extends FormViewController {
                 imageView.setPreserveRatio(true);
                 vBox.getChildren().add(imageView);
                 HBox hBox = new HBox(5);
-                Button deleteButton = new Button("L�schen");
+                Button deleteButton = new Button("Löschen");
                 deleteButton.setOnAction(event -> imageView.setImage(null));
-                Button resetButton = new Button("Zur�cksetzen");
+                Button resetButton = new Button("Zurücksetzen");
                 resetButton.setOnAction(event -> imageView.setImage((Image) imageView.getUserData()));
-                Button acceptButton = new Button("Ausw�hlen...");
+                Button acceptButton = new Button("Auswählen...");
                 acceptButton.setOnAction(event -> {
                     FileChooser fileChooser = new FileChooser();
                     fileChooser.setTitle("Open Resource File");
