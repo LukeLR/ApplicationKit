@@ -280,6 +280,7 @@ public class WindowController extends Controller {
 		Alert alert = new Alert(type, message, buttons);
 		alert.initOwner(window);
 		alert.setHeaderText(title);
+		alert.setResizable(true);
 		if (exception != null) {
 			Label label = new Label("Zus�tzliche Informationen:");
 
