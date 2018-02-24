@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Unterklassen müssen {@link #getTreeItems()} implementieren, sodass der
  * TreeView überhaupt aufgebaut werden kann.
  */
-public abstract class MasterViewController extends TreeViewController<ViewController> {
+public abstract class MasterViewController extends TreeViewController<TableViewController> {
 	/**
 	 * Erstellt eine {@code MasterViewController}-Instanz mit einem Namen (für
 	 * Unterklassen).
@@ -33,7 +33,7 @@ public abstract class MasterViewController extends TreeViewController<ViewContro
 		super.initialize();
 		view.setMinWidth(200);
 		view.setMaxWidth(200);
-		TreeItem<ViewController> root = new TreeItem<>();
+		TreeItem<TableViewController> root = new TreeItem<>();
 		root.setExpanded(true);
 		treeView.setShowRoot(false);
 		treeView.setRoot(root);
@@ -49,7 +49,7 @@ public abstract class MasterViewController extends TreeViewController<ViewContro
 	 *            Neues Element.
 	 */
 	@Override
-	protected void onSelectionChange(TreeItem<ViewController> oldItem, TreeItem<ViewController> newItem) {
+	protected void onSelectionChange(TreeItem<TableViewController> oldItem, TreeItem<TableViewController> newItem) {
 		getMasterDetailViewController().setDetailViewController(newItem == null ? null : newItem.getValue());
 	}
 
@@ -71,7 +71,7 @@ public abstract class MasterViewController extends TreeViewController<ViewContro
 	 * @return Text.
 	 */
 	@Override
-	protected String getTextForItem(ViewController item) {
+	protected String getTextForItem(TableViewController item) {
 		return item.getTitle();
 	}
 
@@ -90,7 +90,7 @@ public abstract class MasterViewController extends TreeViewController<ViewContro
 	 */
 	private void buildView() {
 		getRootItem().getChildren().clear();
-		for (TreeItem<ViewController> treeItem : getTreeItems()) {
+		for (TreeItem<TableViewController> treeItem : getTreeItems()) {
 			getRootItem().getChildren().add(treeItem);
 		}
 	}
@@ -102,5 +102,5 @@ public abstract class MasterViewController extends TreeViewController<ViewContro
 	 *
 	 * @return Liste der TreeItems.
 	 */
-	protected abstract ArrayList<TreeItem<ViewController>> getTreeItems();
+	protected abstract ArrayList<TreeItem<TableViewController>> getTreeItems();
 }
