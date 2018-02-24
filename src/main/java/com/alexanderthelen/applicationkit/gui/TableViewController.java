@@ -157,7 +157,7 @@ public class TableViewController extends ViewController {
         table.getRows().addListener(new ListChangeListener<Row>() {
             @Override
             public void onChanged(Change<? extends Row> c) {
-                bottomStatusLabel.setText("Eintr�ge: " + table.getRows().size());
+                bottomStatusLabel.setText("Einträge: " + table.getRows().size());
             }
         });
 
@@ -187,8 +187,8 @@ public class TableViewController extends ViewController {
             table.setFilter(searchTextField.getText());
             table.fill();
         } catch (SQLException e) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Suche nicht m�glich!",
-                    "Die Suchanfrage konnte nicht ausgef�hrt werden.", e, ButtonType.OK);
+            presentAlertDialog(Alert.AlertType.ERROR, "Suche nicht möglich!",
+                    "Die Suchanfrage konnte nicht ausgeführt werden.", e, ButtonType.OK);
         }
         searchTextField.requestFocus();
     }
@@ -210,7 +210,7 @@ public class TableViewController extends ViewController {
     @FXML
     public void showEditRowViewController() {
         if (selectedRow == null) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht aktualisiert!", "Es wurde keine Zeile ausgew�hlt.",
+            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht aktualisiert!", "Es wurde keine Zeile ausgewählt.",
                     null, ButtonType.OK);
             return;
         }
@@ -223,7 +223,7 @@ public class TableViewController extends ViewController {
     @FXML
     public void deleteRow() {
         if (selectedRow == null) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht gel�scht!", "Es wurde keine Zeile ausgew�hlt.", null,
+            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht gelöscht!", "Es wurde keine Zeile ausgewählt.", null,
                     ButtonType.OK);
             return;
         }
@@ -275,8 +275,8 @@ public class TableViewController extends ViewController {
             table.deleteRow(row);
             fillView();
         } catch (SQLException e) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht gel�scht!",
-                    "Die Zeile konnte nicht gel�scht werden.", e, ButtonType.OK);
+            presentAlertDialog(Alert.AlertType.ERROR, "Zeile nicht gelöscht!",
+                    "Die Zeile konnte nicht gelöscht werden.", e, ButtonType.OK);
         }
     }
 
@@ -411,8 +411,8 @@ public class TableViewController extends ViewController {
         try {
             table.fill();
         } catch (SQLException e) {
-            presentAlertDialog(Alert.AlertType.ERROR, "Tabelle nicht gef�llt!",
-                    "Die Tabelle konnte nicht gef�llt werden.", e, ButtonType.OK);
+            presentAlertDialog(Alert.AlertType.ERROR, "Tabelle nicht gefüllt!",
+                    "Die Tabelle konnte nicht gefüllt werden.", e, ButtonType.OK);
         }
     }
 
