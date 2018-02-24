@@ -67,14 +67,14 @@ public abstract class RegistrationViewController extends FormViewController {
 		try {
 			registerUser(getInputData());
 			presentAlertDialog(Alert.AlertType.INFORMATION, "Registrierung erfolgreich!",
-					"Die Registrierung des Nutzers konnte ausgef�hrt werden.", null, ButtonType.OK);
+					"Die Registrierung des Nutzers konnte ausgeführt werden.", null, ButtonType.OK);
 			if (getParentController() instanceof AuthenticationViewController) {
 				((AuthenticationViewController) getParentController()).onUserRegister();
 			}
 			resetInput();
 		} catch (Exception e) {
 			presentAlertDialog(Alert.AlertType.ERROR, "Registrierung fehlgeschlagen!",
-					"Die Registrierung des Nutzers konnte nicht ausgef�hrt werden.", e, ButtonType.OK);
+					"Die Registrierung des Nutzers konnte nicht ausgeführt werden.", e, ButtonType.OK);
 			getInputNodes().get(0).requestFocus();
 		}
 	}

@@ -282,7 +282,7 @@ public class WindowController extends Controller {
 		alert.setHeaderText(title);
 		alert.setResizable(true);
 		if (exception != null) {
-			Label label = new Label("Zus�tzliche Informationen:");
+			Label label = new Label("Zusätzliche Informationen:");
 
 			StringWriter stringWriter = new StringWriter();
 			PrintWriter printWriter = new PrintWriter(stringWriter);
